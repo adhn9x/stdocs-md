@@ -1,0 +1,47 @@
+# Deprecated Soon - Event: New Bot Subscriber
+
+**Since February 6, 2025, the bot subscription logic has been removed. This API will also be deprecated soon. We recommend using alternative logic to achieve your goal.**
+
+## Event Description
+
+This event is triggered when a user has become a new subscriber of the bot.
+
+## Event Parameter
+
+**Header**
+
+|Parameter|Type|Description|
+|---|---|---|
+|Content-Type|string|Request header format|
+|Signature|string|A signature to ensure that the request is sent by SeaTalk|
+
+**Body**
+
+|Parameter|Type|Description|
+|---|---|---|
+|event\_id|string|The ID of the event|
+|event\_type|string|The type of the event. It will be " new\_bot\_subscriber " in this case|
+|timestamp|uint64|The time when this event happened|
+|app\_id|string|The ID of the app to receive the event notification|
+|event|object|Event-specific information|
+|∟employee\_code|string|The employee\_code of the new subscriber|
+
+**Request Body Sample**
+
+```json
+{
+  "event_id": "1234567",
+  "event_type": "new_bot_subscriber",
+  "timestamp": 1611220944,
+  "app_id": "abcdefghiklmn",
+  "event": {
+    "employee_code": "e_12345678"
+  }
+} Copy
+```
+
+Was this document helpful?
+
+No
+
+Yes
